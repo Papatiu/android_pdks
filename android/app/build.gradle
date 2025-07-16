@@ -1,0 +1,45 @@
+plugins {
+    id "com.android.application"
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services'
+    // END: FlutterFire Configuration
+    id "org.jetbrains.kotlin.android" version "1.8.22"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+
+
+android {
+    namespace "com.example.eyyubiye_personel_takip"
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.eyyubiye_personel_takip"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
+
+flutter {
+    source = "../.."
+}
